@@ -7,3 +7,4 @@ feature 'Form for player names' do
         expect(page).to have_content 'Jai vs Adam'
     end
 end
+
