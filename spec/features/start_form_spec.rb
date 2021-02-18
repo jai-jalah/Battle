@@ -1,28 +1,12 @@
 feature 'Form for player names' do
-    before do
+    
+    scenario 'enter & submit player names and see them on screen' do
         visit '/'
+        fill_in :p1_name, with: 'jai'
+        fill_in :p2_name, with: 'adam'
+        click_button 'Submit'
+        expect(page).to have_content 'jai vs adam'
     end
 
-    scenario 'Can enter player names' do
-        first_test = fill_in('P1_name', with: 'Jai')
-        expect(first_test).to eq('Jai')
-    end
-
-   
-    scenario 'Can submit' do
-        find_button('Submit').click
-    end
-
-    scenario 'Can see player names on screen' do
-        expect('/').to have_content('Jai')
-    end
-end
-
-Feature 'enter names and see them' do
-  scenario 'Can enter player names' do
-    fill_in :P1_name, with: 'Jai'
-    click_button 'Submit'
-    expect(page).to have_content('Jai')
-  end
 end
 
