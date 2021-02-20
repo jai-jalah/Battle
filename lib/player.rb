@@ -12,5 +12,5 @@ class Player
   def receive_damage
     @hp -= ATTACK
   end
-
+  
 end
